@@ -6,6 +6,10 @@ from utils.topic_modelling import get_topic_modelling,get_topic_modelling_web
 app = Flask(__name__)
 cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
 
+@app.route("/api/hello")
+def hello():
+    return "hello"
+
 @app.route("/api/zoom_vis",methods = ['GET'])
 def get_zoom_visualizations():
     releases_per_month=get_releases_per_month()
